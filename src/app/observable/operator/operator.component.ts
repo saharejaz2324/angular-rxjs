@@ -9,14 +9,16 @@ import { filter, map } from 'rxjs/operators';
 })
 export class OperatorComponent implements OnInit {
   squareNum;
+  listSquareNum;
   constructor() {}
 
   ngOnInit() {
     const nums = of(1, 2, 3, 4, 5);
     const squareValues = map((val: number) => val * val);
     const squaredNums = squareValues(nums);
-    this.squareNum = squaredNums.subscribe(x => console.log(x));
-    this.listAppend(this.squareNum, 'elContainer');
+    this.squareNum = squaredNums.subscribe(x => {
+      this.listAppend(x, 'elContainer');
+    });
 
     //Pipe function
     const squareOddVals = pipe(
@@ -25,7 +27,9 @@ export class OperatorComponent implements OnInit {
     );
 
     const squareOdd = squareOddVals(nums);
-    squareOdd.subscribe(x => console.log(x));
+    squareOdd.subscribe(x => {
+      this.listAppend(x, 'elContainer2');
+    });
   }
 
   listAppend(calVal, containerId) {

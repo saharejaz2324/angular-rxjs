@@ -21,7 +21,7 @@ const routes: Routes = [
         component: ListComponent
       },
       {
-        path: 'fromEvent',
+        path: 'fromEventComponent',
         component: FromEventComponent
       },
       {

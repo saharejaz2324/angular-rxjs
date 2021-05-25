@@ -24,7 +24,7 @@ export class FromEventComponent
   ngAfterViewInit() {
     fromEvent(this.addBtn.nativeElement, 'click').subscribe(res => {
       let calVal = 'Video ' + this.count++;
-      this.listAppend(calVal, 'elContainer2');
+      this.listAppend(calVal, 'elContainer');
     });
   }
   ngAfterContentInit() {}
