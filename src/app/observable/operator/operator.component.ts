@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { of, pipe } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operator',
@@ -12,9 +12,25 @@ export class OperatorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const nums = of(1, 2, 3);
+    const nums = of(1, 2, 3, 4, 5);
     const squareValues = map((val: number) => val * val);
     const squaredNums = squareValues(nums);
     this.squareNum = squaredNums.subscribe(x => console.log(x));
+    this.listAppend(this.squareNum, 'elContainer');
+
+    //Pipe function
+    const squareOddVals = pipe(
+      filter((n: number) => n % 2 !== 0),
+      map((n: number) => n * n)
+    );
+
+    const squareOdd = squareOddVals(nums);
+    squareOdd.subscribe(x => console.log(x));
+  }
+
+  listAppend(calVal, containerId) {
+    let el = document.createElement('li');
+    el.innerText = calVal;
+    document.getElementById(containerId).appendChild(el);
   }
 }

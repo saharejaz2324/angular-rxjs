@@ -7,7 +7,6 @@ import {
   ViewChild
 } from '@angular/core';
 import { fromEvent } from 'rxjs';
-import { DesignUtilituService } from '../../appService/design-utility.service';
 
 @Component({
   selector: 'app-from-event',
@@ -17,7 +16,7 @@ import { DesignUtilituService } from '../../appService/design-utility.service';
 export class FromEventComponent
   implements OnInit, AfterViewInit, AfterContentInit {
   count = 1;
-  constructor(private _designUtility: DesignUtilituService) {}
+  constructor() {}
 
   @ViewChild('addBtn') addBtn: ElementRef;
 
@@ -25,14 +24,13 @@ export class FromEventComponent
   ngAfterViewInit() {
     fromEvent(this.addBtn.nativeElement, 'click').subscribe(res => {
       let calVal = 'Video ' + this.count++;
-      this._designUtility.listAppend(calVal, 'elContainer');
-      // this.listAppend(calVal, 'elContainer2');
+      this.listAppend(calVal, 'elContainer2');
     });
   }
   ngAfterContentInit() {}
-  // listAppend(calVal, containerId) {
-  //   let el = document.createElement('li');
-  //   el.innerText = calVal;
-  //   document.getElementById(containerId).appendChild(el);
-  // }
+  listAppend(calVal, containerId) {
+    let el = document.createElement('li');
+    el.innerText = calVal;
+    document.getElementById(containerId).appendChild(el);
+  }
 }

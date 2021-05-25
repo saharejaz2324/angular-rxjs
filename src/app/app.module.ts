@@ -11,9 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ObservableComponent } from './observable/observable.component';
 import { ListComponent } from './observable/list/list.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
-import { IntervalComponent } from './observable/interval/interval.component';
-import { OperatorComponent } from './observable/operator/operator.component';
-import { DesignUtilituService } from './appService/design-utility.service';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgbModule, AppRoutingModule],
@@ -24,11 +21,8 @@ import { DesignUtilituService } from './appService/design-utility.service';
     PromiseComponent,
     ObservableComponent,
     ListComponent,
-    FromEventComponent,
-    IntervalComponent,
-    OperatorComponent
+    FromEventComponent
   ],
-  bootstrap: [AppComponent, HeaderComponentComponent],
-  providers: [DesignUtilituService]
+  bootstrap: [AppComponent, HeaderComponentComponent]
 })
 export class AppModule {}
