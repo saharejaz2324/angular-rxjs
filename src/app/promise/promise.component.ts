@@ -12,10 +12,10 @@ export class PromiseComponent implements OnInit {
   constructor() {}
 
   dellAvaiable() {
-    return true;
+    return false;
   }
   hpAvaiable() {
-    return false;
+    return true;
   }
 
   ngOnInit() {
@@ -41,11 +41,9 @@ export class PromiseComponent implements OnInit {
     butLaptop
       .then(res => {
         this.promiseVal = res;
-        console.log('then Result => ', res);
       })
       .catch(res => {
         this.promiseVal = res;
-        console.log('catch Result => ', res);
       });
   }
 

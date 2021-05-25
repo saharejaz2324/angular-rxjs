@@ -19,6 +19,12 @@ export class OperatorComponent implements OnInit {
     this.squareNum = squaredNums.subscribe(x => {
       this.listAppend(x, 'elContainer');
     });
+    const source = of(function hello() {
+      return 'Hello';
+    });
+    const subscribe = source.subscribe(val => {
+      this.listAppend(val, 'elContainer3');
+    });
 
     //Pipe function
     const squareOddVals = pipe(
