@@ -12,6 +12,7 @@ import { ListComponent } from './observable/list/list.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
 import { IntervalComponent } from './observable/interval/interval.component';
 import { OperatorComponent } from './observable/operator/operator.component';
+import { MouseEventComponent } from './observable/mouse-event/mouse-event.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgbModule, AppRoutingModule],
@@ -23,7 +24,8 @@ import { OperatorComponent } from './observable/operator/operator.component';
     ListComponent,
     FromEventComponent,
     IntervalComponent,
-    OperatorComponent
+    OperatorComponent,
+    MouseEventComponent
   ],
   bootstrap: [AppComponent, HeaderComponentComponent]
 })

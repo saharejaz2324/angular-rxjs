@@ -1,5 +1,4 @@
 import {
-  AfterContentInit,
   AfterViewInit,
   Component,
   ElementRef,
@@ -13,8 +12,7 @@ import { fromEvent } from 'rxjs';
   templateUrl: './from-event.component.html',
   styleUrls: ['./from-event.component.css']
 })
-export class FromEventComponent
-  implements OnInit, AfterViewInit, AfterContentInit {
+export class FromEventComponent implements OnInit, AfterViewInit {
   count = 1;
   constructor() {}
 
@@ -27,7 +25,6 @@ export class FromEventComponent
       this.listAppend(calVal, 'elContainer');
     });
   }
-  ngAfterContentInit() {}
   listAppend(calVal, containerId) {
     let el = document.createElement('li');
     el.innerText = calVal;
