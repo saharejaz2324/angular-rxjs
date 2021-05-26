@@ -17,7 +17,7 @@ export class IntervalComponent implements OnInit {
     this.videoSubscription = boardCastVideos.subscribe(res => {
       this.obsMsg = 'Video ' + res;
       this.listAppend(this.obsMsg, 'elContainer');
-      if (res >= 5) {
+      if (res >= 10) {
         this.videoSubscription.unsubscribe();
       }
     });
