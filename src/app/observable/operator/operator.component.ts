@@ -17,13 +17,13 @@ export class OperatorComponent implements OnInit {
     const squareValues = map((val: number) => val * val);
     const squaredNums = squareValues(nums);
     this.squareNum = squaredNums.subscribe(x => {
-      this.listAppend(x, 'elContainer');
+      this.listAppend(x, 'opContainer');
     });
     const source = of(function hello() {
       return 'Hello';
     });
     const subscribe = source.subscribe(val => {
-      this.listAppend(val, 'elContainer3');
+      this.listAppend(val, 'opContainer3');
     });
 
     //Pipe function
@@ -34,7 +34,7 @@ export class OperatorComponent implements OnInit {
 
     const squareOdd = squareOddVals(nums);
     squareOdd.subscribe(x => {
-      this.listAppend(x, 'elContainer2');
+      this.listAppend(x, 'opContainer2');
     });
   }
 
