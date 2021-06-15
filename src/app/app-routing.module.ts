@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FromEventComponent } from './observable/from-event/from-event.component';
+import { HttpClientComponent } from './observable/http-client/http-client.component';
 import { IntervalComponent } from './observable/interval/interval.component';
 import { ListComponent } from './observable/list/list.component';
 import { MouseEventComponent } from './observable/mouse-event/mouse-event.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'mouseEvent',
         component: MouseEventComponent
+      },
+      {
+        path: 'httpClient',
+        component: HttpClientComponent
       }
     ]
   }
