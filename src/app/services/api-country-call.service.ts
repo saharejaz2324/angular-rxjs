@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -12,12 +12,12 @@ export class ApiCountryCallService {
   responseData: any;
 
   searchCountryByItsName(countryName: string): Observable<Country[]> {
-    let headers: HttpHeaders = new HttpHeaders();
-    headers = headers.append('Accept', 'application/json');
-    headers = headers.append(
-      'X-RapidAPI-Key',
-      '1108554cc1mshf11c17c4fea2b3dp179054jsn2446fb7a8965'
-    );
+    // let headers: HttpHeaders = new HttpHeaders();
+    // headers = headers.append('Accept', 'application/json');
+    // headers = headers.append(
+    //   'X-RapidAPI-Key',
+    //   '1108554cc1mshf11c17c4fea2b3dp179054jsn2446fb7a8965'
+    // );
     // this.httpResponse = this.httpClient.get('https://restcountries-v1.p.rapidapi.com/capital/' + countryName, {headers: headers});
     this.httpResponse = this.httpClient.get(
       'https://restcountries.eu/rest/v2/name/' + countryName
